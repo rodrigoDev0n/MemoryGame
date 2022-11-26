@@ -1,18 +1,26 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from 'react';
 import { useGameFunctions } from "../hooks/useGameFunctions"
 import { Cards } from "./index"
 
 export const Game = () => {
 
-    //TODO: Corregir errores:
+    const [activeModal, setactiveModal] = useState(true);
 
     const {
-        dataState, 
+        dataState,
         points,
         onHandleClick,
         onStartGame,
         animationCard,
     } = useGameFunctions();
+
+    const customModalStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+        },
+    };
 
     return (
         <>
@@ -27,12 +35,12 @@ export const Game = () => {
                 <div className="container">
                     {
                         dataState.map((f, i) => (
-                            <Cards 
-                                key={f.id} 
-                                fruits={f} 
-                                onClickHandle={onHandleClick} 
-                                index={i}  
-                                animationCard={ animationCard }
+                            <Cards
+                                key={f.id}
+                                fruits={f}
+                                onClickHandle={onHandleClick}
+                                index={i}
+                                animationCard={animationCard}
                             />
                         ))
                     }
