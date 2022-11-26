@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useGameFunctions } from "../hooks/useGameFunctions"
 import { Cards } from "./index"
 
@@ -12,6 +12,7 @@ export const Game = () => {
         onHandleClick,
         onStartGame,
         animationCard,
+        addWinConfetti,
     } = useGameFunctions();
 
     const customModalStyles = {
@@ -21,6 +22,11 @@ export const Game = () => {
             transform: 'translate(-50%, -50%)',
         },
     };
+
+    useEffect(() => {
+      addWinConfetti();
+    }, [points === 400])
+    
 
     return (
         <>

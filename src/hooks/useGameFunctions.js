@@ -1,5 +1,6 @@
 import { gameData } from "../data/gameData";
 import { useState } from "react";
+import JSConfetti from "js-confetti";
 
 export const useGameFunctions = () => {
 
@@ -19,6 +20,8 @@ export const useGameFunctions = () => {
 
     const isEqual = (index) => {
         if (dataState[index].image_url == dataState[currentPosition].image_url) {
+            dataState[index].cssClass = 'matched_active_card_container';
+            dataState[currentPosition].cssClass = 'matched_active_card_container'; 
             setcurrentPosition(-1);
             setdataState([...dataState]);
             setpoints(points + 100);
@@ -36,11 +39,11 @@ export const useGameFunctions = () => {
             dataState[index].active = false;
             dataState[currentPosition].active = false;
             setdataState([...dataState]);
-        }, 600);
+        }, 1050);
     }
 
     const addAndQuitAnimation = (index) => {
-        setTimeout(() => {
+/*         setTimeout(() => {
             dataState[index].cssClass = 'card_container';
             dataState[currentPosition].cssClass = 'card_container';
             setdataState([...dataState]);
@@ -50,7 +53,23 @@ export const useGameFunctions = () => {
             dataState[index].cssClass = 'active_card_container';
             dataState[currentPosition].cssClass = 'active_card_container';
             setdataState([...dataState]);
-        }, 500);
+        }, 500); */
+
+        notMatchedAnimation(index);
+    }
+
+    const notMatchedAnimation = (index) => {
+        setTimeout(() => {
+            dataState[index].cssClass = 'not_matched_active_card_container';
+            dataState[currentPosition].cssClass = 'not_matched_active_card_container';
+            setdataState([...dataState]);
+        }, 750);
+
+        setTimeout(() => {
+            dataState[index].cssClass = 'card_container';
+            dataState[currentPosition].cssClass = 'card_container';
+            setdataState([...dataState]);
+        }, 1000);
     }
 
     const onStartGame = () => {
@@ -67,12 +86,35 @@ export const useGameFunctions = () => {
             dataState.map(e => e.cssClass = 'card_container');
             setdataState([...dataState]);
         }, 1000);
-        dataState.sort(() => Math.random() - 5);
+        dataState.sort(() => Math.random() - 6);
         dataState.map(e => e.active = true);
         setdataState([...dataState]);
     }
 
+    const addWinConfetti = () => {
+        if(points < 400) return;
+        const jsConfetti = new JSConfetti();
+        jsConfetti.addConfetti({
+            emojis: ['🥦', '🍎', '🍉', '🍓', '🍒', '🥒'],
+        });
+        resetGame();
+    }
+
+    const resetGame = () => {
+        setpoints(0);
+        setstartedGame(false);
+        dataState.map(e => e.active = false);
+        setTimeout(() => {
+            dataState.map(e => e.cssClass = 'active_card_container');
+        }, 1000);
+
+        setTimeout(() => {
+            dataState.map(e => e.cssClass = 'card_container');
+        }, 1100);
+    }
+
     return {
+        addWinConfetti,
         dataState,
         points,
         onHandleClick,
