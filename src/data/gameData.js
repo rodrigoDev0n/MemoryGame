@@ -5,6 +5,7 @@ export let gameData = [
       'name': 'tomate',
       'image_url': '/assets/tomate.png',
       'active': false,
+      'cssClass': 'card_container',
   },
 
   {
@@ -12,6 +13,7 @@ export let gameData = [
       'name': 'brocoli',
       'image_url': '/assets/brocoli.png',
       'active': false,
+      'cssClass': 'card_container',
   },
 
   {
@@ -19,6 +21,7 @@ export let gameData = [
       'name': 'lechuga',
       'image_url': '/assets/lechuga.png',
       'active': false,
+      'cssClass': 'card_container',
   },
 
   {
@@ -26,6 +29,7 @@ export let gameData = [
       'name': 'coliflor',
       'image_url': '/assets/coliflor.png',
       'active': false,
+      'cssClass': 'card_container',
   },
 
   {
@@ -33,6 +37,7 @@ export let gameData = [
       'name': 'lechuga',
       'image_url': '/assets/lechuga.png',
       'active': false,
+      'cssClass': 'card_container',
   },
 
   {
@@ -40,20 +45,7 @@ export let gameData = [
       'name': 'brocoli',
       'image_url': '/assets/brocoli.png',
       'active': false,
-  },
-
-  {
-      'id': '07',
-      'name': 'manzana',
-      'image_url': '/assets/manzana.png',
-      'active': false,
-  },
-
-  {
-      'id': '08',
-      'name': 'pera',
-      'image_url': '/assets/pera.png',
-      'active': false,
+      'cssClass': 'card_container',
   },
 
   {
@@ -61,6 +53,7 @@ export let gameData = [
       'name': 'tomate',
       'image_url': '/assets/tomate.png',
       'active': false,
+      'cssClass': 'card_container',
   },
 
   {
@@ -68,5 +61,6 @@ export let gameData = [
       'name': 'coliflor',
       'image_url': '/assets/coliflor.png',
       'active': false,
+      'cssClass': 'card_container',
   },
 ]

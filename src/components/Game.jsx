@@ -9,9 +9,9 @@ export const Game = () => {
     const {
         dataState, 
         points,
-        animateContainer,
         onHandleClick,
-        onStartGame  
+        onStartGame,
+        animationCard,
     } = useGameFunctions();
 
     return (
@@ -31,8 +31,8 @@ export const Game = () => {
                                 key={f.id} 
                                 fruits={f} 
                                 onClickHandle={onHandleClick} 
-                                index={i} 
-                                animateContainer={ animateContainer } 
+                                index={i}  
+                                animationCard={ animationCard }
                             />
                         ))
                     }

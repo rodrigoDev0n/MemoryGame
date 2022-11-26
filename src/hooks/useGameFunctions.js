@@ -3,7 +3,7 @@ import { useRef, useState } from "react"
 
 export const useGameFunctions = () => {
 
-    const animateContainer = useRef()
+    const [animationCard, setanimationCard] = useState(false)
     const [startedGame, setstartedGame] = useState(false)
     const [points, setpoints] = useState(0)
     const [dataState, setdataState] = useState(gameData)
@@ -12,7 +12,10 @@ export const useGameFunctions = () => {
     const onHandleClick = (index) => {
         if (!startedGame) return;
         setcurrentPosition(index);
+        setanimationCard(true);
         dataState[index].active = true;
+        console.log(index);
+        dataState[index].cssClass = 'active_card_container';
         isEqual(index);
     }
 
@@ -24,6 +27,7 @@ export const useGameFunctions = () => {
         } else {
             setTimeout(() => {
                 setcurrentPosition(-1)
+                dataState[index].cssClass = 'active_card_container';
                 dataState[index].active = false;
                 dataState[currentPosition].active = false;
                 setdataState([...dataState]);
@@ -33,20 +37,24 @@ export const useGameFunctions = () => {
 
     const onStartGame = () => {
         setTimeout(() => {
-            dataState.sort(() => Math.random() * 100)
-            dataState.map(e => e.active = false)
-            setdataState([...dataState])
+            dataState.sort(() => Math.random() * 8);
+            dataState.map((e) => {
+                e.active = false;
+            });
+            setstartedGame(true);
+            setdataState([...dataState]);
         }, 1000);
-        dataState.sort(() => Math.random() - 3)
-        dataState.map(e => e.active = true)
-        setdataState([...dataState])
-        setstartedGame(true);
+        dataState.map(e => e.cssClass = 'card_container');
+        dataState.sort(() => Math.random() - 3);
+        dataState.map(e => e.active = true);
+        setdataState([...dataState]);
     }
 
     return {
         dataState,
+        animationCard,
+        dataState,
         points,
-        animateContainer,
         onHandleClick,
         isEqual,
         onStartGame

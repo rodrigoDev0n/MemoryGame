@@ -16,7 +16,7 @@ body {
 .container {
   display: grid;
   justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 20px;
   width: 50%;
@@ -46,7 +46,7 @@ body {
   height: 250px;
   transition: all 0.5 ease-in;
   perspective: 1000px;
-  animation: active .2s ease-out;
+  animation: active .2s ease-out alternate;
 }
 
 .card_container:hover {

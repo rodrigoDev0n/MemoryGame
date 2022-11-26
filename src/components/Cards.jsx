@@ -1,12 +1,19 @@
 import { useRef } from "react";
+import { useGameFunctions } from "../hooks/useGameFunctions";
 
-export const Cards = ({ fruits, onClickHandle, index, animateContainer }) => {
-  
-  const { name, image_url, active } = fruits;
+export const Cards = ({ 
+  fruits, 
+  onClickHandle,
+  index, 
+  animateContainer,
+}) => {
+
+  const { dataState, animationCard } = useGameFunctions();
+  const { name, image_url, active, cssClass } = fruits;
   const image = active ? image_url : '/assets/incognita.png';
 
   return (
-    <div ref={ animateContainer } className="card_container" onClick={() => onClickHandle(index) }>
+    <div className={`${cssClass}`} onClick={() => onClickHandle(index) }>
         <img src={ image } alt={ name } id={ name } />
     </div>
   )
