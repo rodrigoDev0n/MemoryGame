@@ -1,3 +1,4 @@
+import requireContext from "require-context";
 
 export const Cards = ({ 
   fruits, 
@@ -20,7 +21,7 @@ export const Cards = ({
       onClick={() => onClickHandle(index) }
     >
         <img 
-          src={ image } 
+          src={ requireContext(image, false) } 
           alt={ name } 
           id={ name } 
         />
