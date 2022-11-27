@@ -12,7 +12,7 @@ export const Cards = ({
     cssClass 
   } = fruits;
   
-  const image = active ? image_url : '../../../public/images/incognita.png';
+  const image = active ? image_url : 'https://github.com/rodrigoDev0n/MemoryGame/blob/main/public/images/incognita.png?raw=true';
 
   return (
     <div 
