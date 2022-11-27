@@ -1,12 +1,12 @@
-import { gameData } from "../data/gameData";
 import { useState } from "react";
 import JSConfetti from "js-confetti";
+import { getData } from "../helpers/getData";
 
 export const useGameFunctions = () => {
 
     const [startedGame, setstartedGame] = useState(false);
     const [points, setpoints] = useState(0);
-    const [dataState, setdataState] = useState(gameData);
+    const [dataState, setdataState] = useState(getData);
     const [currentPosition, setcurrentPosition] = useState();
 
     const onHandleClick = (index) => {
