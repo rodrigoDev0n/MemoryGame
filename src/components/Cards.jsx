@@ -1,4 +1,3 @@
-import requireContext from "require-context";
 
 export const Cards = ({ 
   fruits, 
@@ -8,23 +7,19 @@ export const Cards = ({
 
   const { 
     name, 
-    image_url, 
+    emoji, 
     active, 
     cssClass 
   } = fruits;
   
-  const image = active ? image_url : 'https://github.com/rodrigoDev0n/MemoryGame/blob/main/public/images/incognita.png?raw=true';
+  const emojis = active ? emoji : '🧠';
 
   return (
     <div 
       className={`${cssClass}`} 
       onClick={() => onClickHandle(index) }
     >
-        <img 
-          src={ requireContext(image, false) } 
-          alt={ name } 
-          id={ name } 
-        />
+        <p className="emojis">{ emojis }</p>
     </div>
   )
 }

@@ -115,6 +115,10 @@ button:hover {
   cursor: pointer;
 }
 
+.emojis {
+  font-size: 100px;
+}
+
 @keyframes active {
   0% {
     transform: rotateY(180deg);
@@ -126,7 +130,6 @@ button:hover {
   }
 }
 
-/* TODO: Agregar compatibilidad para dispositivos moviles */
 @media(max-width: 910px ) {
   .main_container {
     align-items: center;

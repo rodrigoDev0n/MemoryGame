@@ -19,7 +19,7 @@ export const useGameFunctions = () => {
     }
 
     const isEqual = (index) => {
-        if (dataState[index].image_url == dataState[currentPosition].image_url) {
+        if (dataState[index].name == dataState[currentPosition].name) {
             dataState[index].cssClass = 'matched_active_card_container';
             dataState[currentPosition].cssClass = 'matched_active_card_container'; 
             setcurrentPosition(-1);
