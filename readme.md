@@ -8,7 +8,10 @@ Memory game creado con react js
 <small>Video</small>
 
 
-https://user-images.githubusercontent.com/108855218/204097236-bc207027-3e38-45cc-9411-31ad5f28e6e8.mov
+
+https://user-images.githubusercontent.com/108855218/204107286-a5294e12-93c9-4d8c-8d9d-e631d8f6794b.mov
+
+
 
 
 
