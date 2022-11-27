@@ -12,7 +12,7 @@ export const Cards = ({
     cssClass 
   } = fruits;
   
-  const image = active ? image_url : '/assets/incognita.png';
+  const image = active ? image_url : '/public/images/incognita.png';
 
   return (
     <div 
