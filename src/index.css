@@ -210,8 +210,8 @@ button:hover {
     animation: active .4s ease-out alternate;
   }
 
-  img {
-    width: 50px;
+  .emojis {
+    font-size: 50px;
   }
 }
 
@@ -294,8 +294,8 @@ button:hover {
     animation: active .4s ease-out alternate;
   }
 
-  img {
-    width: 50px;
+  .emojis {
+    font-size: 50px;
   }
 }
 
@@ -378,7 +378,7 @@ button:hover {
     animation: active .4s ease-out alternate;
   }
 
-  img {
-    width: 50px;
+  .emojis {
+    font-size: 50px;
   }
 }
