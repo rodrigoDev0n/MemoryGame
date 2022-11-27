@@ -125,3 +125,257 @@ button:hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
 }
+
+/* TODO: Agregar compatibilidad para dispositivos moviles */
+@media(max-width: 910px ) {
+  .main_container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    width: 100%;
+  }
+
+  .title_container {
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+    height: 200px;
+    width: 150%;
+  }
+  
+  .container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    width: 50%;
+  }
+
+  .card_container {
+    background-color: rgba(255, 255, 255, 0.609);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 200px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+  }
+  
+  .active_card_container {
+    background-color: rgba(255, 255, 255, 0.609);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 200px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+    animation: active .4s ease-out alternate;
+  }
+  
+  .not_matched_active_card_container {
+    background-color: rgba(247, 75, 75, 0.609);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 200px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+    animation: active .4s ease-out alternate;
+  }
+  
+  .matched_active_card_container {
+    background-color: rgba(99, 235, 94, 0.896);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 200px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+    animation: active .4s ease-out alternate;
+  }
+
+  img {
+    width: 50px;
+  }
+}
+
+@media(max-width: 580px ) {
+  .main_container {
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    width: 100%;
+  }
+
+  .title_container {
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+    height: 150px;
+    width: 100%;
+  }
+  
+  .container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    width: 50%;
+  }
+
+  .card_container {
+    background-color: rgba(255, 255, 255, 0.609);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 100px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+  }
+  
+  .active_card_container {
+    background-color: rgba(255, 255, 255, 0.609);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 100px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+    animation: active .4s ease-out alternate;
+  }
+  
+  .not_matched_active_card_container {
+    background-color: rgba(247, 75, 75, 0.609);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 100px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+    animation: active .4s ease-out alternate;
+  }
+  
+  .matched_active_card_container {
+    background-color: rgba(99, 235, 94, 0.896);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 100px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+    animation: active .4s ease-out alternate;
+  }
+
+  img {
+    width: 50px;
+  }
+}
+
+@media(max-width: 380px ) {
+  .main_container {
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    width: 100%;
+  }
+
+  .title_container {
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+    height: 150px;
+    width: 100%;
+  }
+  
+  .container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    width: 50%;
+  }
+
+  .card_container {
+    background-color: rgba(255, 255, 255, 0.609);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    height: 100px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+  }
+  
+  .active_card_container {
+    background-color: rgba(255, 255, 255, 0.609);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    height: 100px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+    animation: active .4s ease-out alternate;
+  }
+  
+  .not_matched_active_card_container {
+    background-color: rgba(247, 75, 75, 0.609);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    height: 100px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+    animation: active .4s ease-out alternate;
+  }
+  
+  .matched_active_card_container {
+    background-color: rgba(99, 235, 94, 0.896);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.302);
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    height: 100px;
+    transition: all 0.5 ease-in;
+    perspective: 1000px;
+    animation: active .4s ease-out alternate;
+  }
+
+  img {
+    width: 50px;
+  }
+}
