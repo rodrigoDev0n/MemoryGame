@@ -3,7 +3,6 @@ import JSConfetti from "js-confetti";
 import { getData } from "../helpers/getData";
 
 export const useGameFunctions = () => {
-
     const [startedGame, setstartedGame] = useState(false);
     const [points, setpoints] = useState(0);
     const [dataState, setdataState] = useState(getData);
@@ -22,11 +21,13 @@ export const useGameFunctions = () => {
         if (dataState[index].name == dataState[currentPosition].name) {
             dataState[index].cssClass = 'matched_active_card_container';
             dataState[currentPosition].cssClass = 'matched_active_card_container'; 
+
             setcurrentPosition(-1);
             setdataState([...dataState]);
             setpoints(points + 100);
         } else {
             notEqual(index);
+            setstartedGame(false);
         }
     }
 
@@ -35,11 +36,26 @@ export const useGameFunctions = () => {
         setTimeout(() => {
             dataState[index].cssClass = 'card_container';
             dataState[currentPosition].cssClass = 'card_container';
+
             setcurrentPosition(-1);
+
             dataState[index].active = false;
             dataState[currentPosition].active = false;
+
             setdataState([...dataState]);
         }, 1050);
+
+        setTimeout(() => {
+            setstartedGame(true);
+        }, 1065);
+    }
+
+    const notSelectedImage = (index) => {
+        dataState.find(e => {
+            if (e.active && dataState[currentPosition].active) {
+                
+            }
+        });
     }
 
     const addAndQuitAnimation = (index) => {
@@ -86,7 +102,7 @@ export const useGameFunctions = () => {
             dataState.map(e => e.cssClass = 'card_container');
             setdataState([...dataState]);
         }, 1000);
-        dataState.sort(() => Math.random() - 6);
+        dataState.sort((a, b) => Math.random() - 0.5);
         dataState.map(e => e.active = true);
         setdataState([...dataState]);
     }
