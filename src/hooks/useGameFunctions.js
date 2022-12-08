@@ -10,6 +10,9 @@ export const useGameFunctions = () => {
 
     const onHandleClick = (index) => {
         if (!startedGame) return;
+        if (dataState[index].cssClass == 'matched_active_card_container') return;
+        if (dataState[index] == dataState[currentPosition]) return;
+
         setcurrentPosition(index);
         dataState[index].active = true;
         console.log(dataState[index].cssClass);
@@ -89,12 +92,14 @@ export const useGameFunctions = () => {
     }
 
     const onStartGame = () => {
+        setpoints(0);
+        dataState.map((e) => e.cssClass = 'card_container');
         setTimeout(() => {
             dataState.map((e) => {
                 e.active = false;
+                e.cssClass = 'active_card_container';
             });
             setstartedGame(true);
-            dataState.map(e => e.cssClass = 'active_card_container');
             setdataState([...dataState]);
         }, 900);
 
